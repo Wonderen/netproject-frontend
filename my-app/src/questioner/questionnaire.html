@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionnaire</title>
+
+    <link rel="stylesheet" href="qStyle.css">
+
+</head>
+
+<body>
+	<h1>ثبت نظرات</h1>
+
+	<form id="form">
+		<div class="form-control">
+			<label for="name" id="label-name">
+				Name
+			</label>
+
+            <input type="text"
+				id="name"
+				placeholder="نام و نام خوانوادگی" />
+		</div>
+
+		<div class="form-control">
+			<label for="snum" id="label-snum">
+				Student number
+			</label>
+
+			<!-- Input Type Text -->
+			<input type="text"
+				id="snum"
+				placeholder="شماره دانشجویی" />
+		</div>
+
+        <div class="form-control">
+			<label for="email" id="label-email">
+				Email
+			</label>
+			<input type="email"
+				id="email"
+				placeholder="پست الکترونیک" />
+		</div>
+
+		<div class="form-control">
+			<label for="role" id="label-role">
+				Role
+			</label>
+			
+			<select name="role" id="role">
+				<option value="bch">کارشناسی</option>
+				<option value="master">کارشناسی ارشد</option>
+				<option value="phd">دکترا</option>
+				<option value="other">اعضا</option>
+			</select>
+		</div>
+
+        <div class="form-control">
+            <label>Hashtags
+                <small>(Check all that apply)</small>
+            </label>
+            <label for="inp-1">
+                <input type="checkbox"
+                       name="inp">امکانات</input></label>
+            <label for="inp-2">
+                <input type="checkbox"
+                       name="inp">نظافت و کیفیت</input></label>
+            <label for="inp-3">
+                <input type="checkbox"
+                       name="inp">نیازمندی</input></label>
+                    
+        </div>
+
+		<div class="form-control">
+			<label for="comment">
+			    Comments and Suggestions
+			</label>
+
+			<!-- multi-line text input control -->
+			<textarea name="comment" id="comment"
+				placeholder="نظرات و پیشنهادات خود را بنویسید">
+			</textarea>
+		</div>
+
+		<!-- Multi-line Text Input Control -->
+		<button type="submit" value="submit">
+			ثبت
+		</button>
+	</form>
+</body>
+
+</html>

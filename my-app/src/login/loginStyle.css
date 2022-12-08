@@ -1,0 +1,68 @@
+* {  
+    font-family: sans-serif;
+}
+.form-container{
+    min-height: 100vh;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    padding-bottom: 60px;
+    background: #eee;
+  }
+  
+  .form-container form{
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 1);
+    background: #fff;
+    text-align: center;
+    width: 500px;
+  }
+  .form-container form h3{
+    font-size: 30px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  .form-container form input, select{
+    width: 95%;
+    padding: 10px 15px;
+    font-size: 17px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 8px 0;
+    background: #eee;
+    border-color: #eee;
+    border-radius: 5px;
+  }
+  .form-container form select option{
+    background: #fff;
+  }
+
+  .form-container form a button{
+    background: #eee;
+    padding: 6px;
+    color: crimson;
+    text-transform: capitalize;
+    font-size: 20px;
+    width: 30%;
+    cursor: pointer;
+    border-color: #fff;
+    border-radius: 11px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+  .form-container form a button:hover {
+    background: crimson;
+    color: #fff;
+    text-transform: capitalize;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .form-container form p{
+    margin-top: 10px;
+    font-size: 20px;
+    color: #333;
+  }
+  .form-container form p a{
+    color: rgb(38, 6, 104);
+  }
