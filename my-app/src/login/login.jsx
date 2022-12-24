@@ -36,9 +36,14 @@ function LoginScreen() {
                 <option value="admin">admin</option>
             </select>
             {/* <!-- <input type="submit" name="submit" value="Login" class="form-btn"> --> */}
-            <a href="questionnaire.html">
-                <button>Login</button>
-                </a>
+            {/* <a href="questionnaire.html"> */}
+            <a>
+              <div className="text-right">
+                <button type="submit" className="btn mt-3">
+                  LOGIN
+                </button>
+              </div>
+            </a>
             <p>don't have an account? <a href="signup_form.html">signup here</a></p>
         </form>
         </div>
