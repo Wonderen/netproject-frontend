@@ -29,8 +29,8 @@ function LoginScreen() {
         <div class="form-container">
         <form onSubmit={loginUser}>
             <h3>Login now</h3>
-            <input type="snumber" name="snumber" placeholder="enter your student number"/>
-            <input type="password" name="password" placeholder="enter your password"/>
+            <input type="snumber" id='user_name' required name="snumber" placeholder="enter your student number"/>
+            <input type="password" id='password' required name="password" placeholder="enter your password"/>
             <select name="user_type">
                 <option value="user">user</option>
                 <option value="admin">admin</option>
