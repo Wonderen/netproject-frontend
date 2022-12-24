@@ -1,6 +1,30 @@
 import React from 'react';
 import './loginStyle.css';
-function Login() {
+function LoginScreen() {
+
+    const loginUser = async () => {
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        var raw = JSON.stringify({
+        "user_name": document.getElementById("user_name").value,
+        "password": document.getElementById("password").value 
+        });
+
+        var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
+        };
+        var r;
+        await fetch("http://127.0.0.1:8000/login/", requestOptions)
+        .then(response => response.text())
+        .then(result => {r = result});
+        console.log(r);
+        document.getElementById("msg").innerHTML = r;
+      };
+
     return (
         <div class="form-container">
         <form action="" method="post">
