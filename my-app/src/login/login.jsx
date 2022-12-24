@@ -44,7 +44,7 @@ function LoginScreen() {
                 </button>
               </div>
             </a>
-            <p>don't have an account? <a href="signup_form.html">signup here</a></p>
+            <p id="msg">don't have an account? <a href="signup_form.html">signup here</a></p>
         </form>
         </div>
     );
