@@ -7,7 +7,7 @@ function LoginScreen() {
         myHeaders.append("Content-Type", "application/json");
 
         var raw = JSON.stringify({
-        "user_name": document.getElementById("user_name").value,
+        "student_number": document.getElementById("user_name").value,
         "password": document.getElementById("password").value 
         });
 
@@ -50,4 +50,4 @@ function LoginScreen() {
     );
 }
 
-export default Login;
+export default LoginScreen;
