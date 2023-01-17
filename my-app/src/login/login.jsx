@@ -1,8 +1,17 @@
 import React from 'react';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import './loginStyle.css';
 function LoginScreen() {
+  const navigate = useNavigate();
 
-    const loginUser = async () => {
+  const [error, setError] = useState(null);
+  const [statusCode, setStatus] = useState(' ');
+
+    const loginUser = (e) => {
+        e.preventDefault();
+
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
 
@@ -17,12 +26,16 @@ function LoginScreen() {
         body: raw,
         redirect: 'follow'
         };
-        var r;
-        await fetch("http://127.0.0.1:8000/login/", requestOptions)
-        .then(response => response.text())
-        .then(result => {r = result});
-        console.log(r);
-        document.getElementById("msg").innerHTML = r;
+        fetch("http://127.0.0.1:8000/login/", requestOptions)
+        .then(res => {
+          setStatus(res.status)
+          setError(res.statusText)
+          if (res.status != 200) {
+            document.getElementById("errormsg").innerHTML = res.statusText;
+          } else if (res.status == 200) {
+            return navigate("/")
+          }
+        })
       };
 
     return (
@@ -44,7 +57,8 @@ function LoginScreen() {
                 </button>
               </div>
             </a>
-            <p id="msg">don't have an account? <a href="signup_form.html">signup here</a></p>
+            <p>don't have an account? <a href="signup_form.html">signup here</a></p>
+            <p id="errormsg"></p>
         </form>
         </div>
     );
