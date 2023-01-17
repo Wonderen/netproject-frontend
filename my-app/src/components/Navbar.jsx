@@ -18,7 +18,7 @@ export default function Navbar() {
               <Link className="Nav__link" to="/signup">Sign up</Link>
             </li>
             <li className="Nav__item">
-              <Link className="Nav__link" to="/path3">Link 3</Link>
+              <Link className="Nav__link" to="/questionnaire">Questionnaire</Link>
             </li>
           </ul>
         </div>
