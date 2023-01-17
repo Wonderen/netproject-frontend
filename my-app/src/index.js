@@ -1,37 +1,28 @@
-// import React from 'react';
-// import ReactDOM from 'react-dom/client';
-// import './index.css';
-// import App from './App';
-// import reportWebVitals from './reportWebVitals';
+import React, { Component } from 'react';
+import {Route, Routes } from "react-router-dom";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from 'react-router-dom';
+import './index.css';
+import App from './App';
+import LoginScreen from "./login/login";
+import Navbar from "./components/Navbar";
+import Signup from "./signup/signup"
+import Questionnaire from "./questioner/questionnaire"
+import reportWebVitals from './reportWebVitals';
 
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>
-// );
-
-// reportWebVitals();
-
-import ReactDOM from "react-dom";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "./Layout";
-import Login from "./login/login";
-import Signup from "./signup/signup";
-
-export default function App() {
-  return (
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          {/* <Route index element={<Login />} /> */}
-          <Route path="signup" element={<Signup />} />
-          <Route path="login" element={<Login />} />
-          {/* <Route path="*" element={<NoPage />} /> */}
-        </Route>
-      </Routes>
+    <Navbar />
+    <Routes>
+      <Route path="/" element={ <App /> }></Route>
+      <Route path="/login" element={<LoginScreen/>}></Route>
+      <Route path="/signup" element={<Signup/>}></Route>
+      <Route path="/questionnaire" element={<Questionnaire/>} win></Route>
+    </Routes>
     </BrowserRouter>
-  );
-}
+  </React.StrictMode>
+);
 
-ReactDOM.render(<App />, document.getElementById("root"));
+reportWebVitals();
