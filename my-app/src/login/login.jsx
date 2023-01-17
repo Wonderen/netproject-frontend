@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useGeneral } from "../components/general-context"
 
 import './loginStyle.css';
 function LoginScreen() {

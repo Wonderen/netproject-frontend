@@ -21,11 +21,41 @@
             <option value="admin">admin</option>
         </select>
         <!-- <input type="submit" name="submit" value="Login" class="form-btn"> -->
-        <a href="questionnaire.html">
-            <button>Login</button>
-          </a>
+        <!-- <a href="questionnaire.html"> -->
+            <button type="button" onclick="readInfo()">Login</button>
+            <p id="msg"></p>
+          <!-- </a> -->
         <p>don't have an account? <a href="signup_form.html">signup here</a></p>
     </form>
+    <script>
+        async function readInfo(){
+            var myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/json");
+
+            var raw = JSON.stringify({
+            "user_name": "admin",
+            "password": "admin"
+            });
+
+            var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+            };
+            var r
+            const a = await fetch("http://127.0.0.1:8000/login/", requestOptions);
+            // .then(response => response.json())
+            // .then(result => {r = result})
+            console.log(a);
+            // a.then(response => console.log(response.text()))
+            // .catch(error => console.log('error', error));
+            // console.log(r);
+            // console.log(1);
+            document.getElementById("msg").innerHTML = r;
+
+        }
+    </script>
 </div>
 </body>
 </html>
